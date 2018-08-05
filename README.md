@@ -2,7 +2,7 @@
 ngx_pagespeed Dockerfile for Alpine, based on wernight/docker-alpine-nginx-pagespeed
 
 ## Docker base
-This image is based on Alpine Linux version 3.7
+This image is based on Alpine Linux version latest(3.8)
 
 ## Pagespeed Components:
 ### mod-pagespeed
@@ -28,7 +28,10 @@ This image should be a 100% compatible drop in replacement for the official ngin
     $ git clone https://github.com/blueapple188/ngx-pagespeed-alpine.git
     $ docker-compose up -d
    Refer [this](https://docs.docker.com/compose/reference/run/) for additional options.
-
+## Configuration
+The config is set using environments
+### default values
+PAGESPEED_ENABLE=on # || off
 ## TODO
 - Be 100% compatible with nginx 1.14.0 image on dockerhub when released, for now 100% compatible with 1.12.2 image
 - Create a dockerhub repo
