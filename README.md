@@ -25,10 +25,10 @@ This image should be a 100% compatible drop in replacement for the official ngin
     $ docker run -d -p 443:443 <image_tag>  
   Refer [this](https://docs.docker.com/engine/reference/run/) for additional options.
 ### Run this container as an independent service with docker-compose.
-    $ git clone https://github.com/blueapple188/ngx-pagespeed-alpine.git
+    $ git clone https://github.com/blueapple168/nginx-pagespeed.git
     $ docker-compose up -d
    Refer [this](https://docs.docker.com/compose/reference/run/) for additional options.
-## Configuration
+# Configuration Pagespeed
 The config is set using environments
 ### default values
 PAGESPEED_ENABLE=on # || off
