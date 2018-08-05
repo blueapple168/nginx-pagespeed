@@ -192,7 +192,8 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY conf.d/pagespeed.conf /etc/nginx/conf.d/pagespeed.conf
 COPY pagespeed.png /usr/share/nginx/html/
-
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 ##########################################
 # Combine everything with minimal layers #
@@ -226,7 +227,5 @@ RUN addgroup -S nginx && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
-
-STOPSIGNAL SIGTERM
-
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
