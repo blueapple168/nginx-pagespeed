@@ -191,6 +191,8 @@ RUN rm -rf /etc/nginx/html/ && \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY conf.d/pagespeed.conf /etc/nginx/conf.d/pagespeed.conf
+COPY conf.d/core.conf /etc/nginx/conf.d/core.conf
+COPY conf.d/gzip.conf /etc/nginx/conf.d/gzip.conf
 COPY pagespeed.png /usr/share/nginx/html/
 
 ##########################################
