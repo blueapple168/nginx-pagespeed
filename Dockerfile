@@ -227,5 +227,5 @@ RUN addgroup -S nginx && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
