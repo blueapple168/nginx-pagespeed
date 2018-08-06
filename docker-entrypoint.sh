@@ -9,6 +9,7 @@ fi
 if [ -n "$PAGESPEED_ENABLE" ]
 then
     sed -i 's|pagespeed on;|pagespeed '"$PAGESPEED_ENABLE"';|g' /etc/nginx/conf.d/pagespeed.conf
+    sed -i 's|pagespeed on;|pagespeed '"$PAGESPEED_ENABLE"';|g' /etc/nginx/conf.d/default.conf
 fi
 
 exec "$@"
