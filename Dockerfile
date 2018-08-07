@@ -191,8 +191,6 @@ RUN rm -rf /etc/nginx/html/ && \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY conf.d/pagespeed.conf /etc/nginx/conf.d/pagespeed.conf
-COPY conf.d/core.conf /etc/nginx/conf.d/core.conf
-COPY conf.d/gzip.conf /etc/nginx/conf.d/gzip.conf
 COPY pagespeed.png /usr/share/nginx/html/
 
 ##########################################
@@ -209,8 +207,6 @@ COPY --from=nginx /usr/sbin/nginx /usr/sbin/nginx
 COPY --from=nginx /usr/lib/nginx/modules/ /usr/lib/nginx/modules/
 COPY --from=nginx /etc/nginx /etc/nginx
 COPY --from=nginx /usr/share/nginx/html/ /usr/share/nginx/html/
-# COPY docker-entrypoint.sh /usr/local/bin/
-# RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 RUN apk --no-cache upgrade && \
     scanelf --needed --nobanner --format '%n#p' /usr/sbin/nginx /usr/lib/nginx/modules/*.so /usr/local/bin/envsubst \
@@ -229,5 +225,4 @@ RUN addgroup -S nginx && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
-# ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
