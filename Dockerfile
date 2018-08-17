@@ -214,7 +214,7 @@ RUN apk --no-cache upgrade && \
             | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
             | xargs apk add --no-cache \
     && \
-    apk add --no-cache tzdata
+    apk add --no-cache tzdata curl
 
 RUN addgroup -S nginx && \
     adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx && \
