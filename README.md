@@ -10,7 +10,7 @@ This image is based on Alpine Linux version latest(3.8)
 ### ngx-pagespeed
 1.13.35.2
 ### Nginx
-Stable NGINX version 1.14.0 fetched from [nginx.org](http://nginx.org/download) .
+Stable NGINX version 1.16.0 fetched from [nginx.org](http://nginx.org/download) .
 
 This image should be a 100% compatible drop in replacement for the official nginx image.
 
